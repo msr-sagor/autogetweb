@@ -39,10 +39,12 @@ https://footsters.livesports18.workers.dev/?play=405&stream=2
 https://footsters.livesports18.workers.dev/?play=406&stream=0
 #EXTINF:-1 tvg-name="Sevilla vs Real Madrid | PREMIER SPORTS",Sevilla vs Real Madrid | PREMIER SPORTS
 https://footsters.livesports18.workers.dev/?play=406&stream=1
-#EXTINF:-1 tvg-name="Sevilla vs Real Madrid | TSN SPORTS FHD",Sevilla vs Real Madrid | TSN SPORTS FHD
+#EXTINF:-1 tvg-name="Sevilla vs Real Madrid | FANCODE FHD",Sevilla vs Real Madrid | FANCODE FHD
 https://footsters.livesports18.workers.dev/?play=406&stream=2
-#EXTINF:-1 tvg-name="Sevilla vs Real Madrid | Laliga TV FHD",Sevilla vs Real Madrid | Laliga TV FHD
+#EXTINF:-1 tvg-name="Sevilla vs Real Madrid | TSN SPORTS FHD",Sevilla vs Real Madrid | TSN SPORTS FHD
 https://footsters.livesports18.workers.dev/?play=406&stream=3
+#EXTINF:-1 tvg-name="Sevilla vs Real Madrid | Laliga TV FHD",Sevilla vs Real Madrid | Laliga TV FHD
+https://footsters.livesports18.workers.dev/?play=406&stream=4
 #EXTINF:-1 tvg-name="Barcelona vs Real Betis | beIN ENGLISH FHD",Barcelona vs Real Betis | beIN ENGLISH FHD
 https://footsters.livesports18.workers.dev/?play=407&stream=0
 #EXTINF:-1 tvg-name="Barcelona vs Real Betis | PREMIER SPORTS",Barcelona vs Real Betis | PREMIER SPORTS

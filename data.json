@@ -213,7 +213,7 @@
         }
       },
       {
-        "name": "TSN SPORTS FHD",
+        "name": "FANCODE FHD",
         "stream": 2,
         "mpd": "",
         "clearkey": {
@@ -222,8 +222,17 @@
         }
       },
       {
-        "name": "Laliga TV FHD",
+        "name": "TSN SPORTS FHD",
         "stream": 3,
+        "mpd": "",
+        "clearkey": {
+          "kid": "",
+          "key": ""
+        }
+      },
+      {
+        "name": "Laliga TV FHD",
+        "stream": 4,
         "mpd": "",
         "clearkey": {
           "kid": "",
