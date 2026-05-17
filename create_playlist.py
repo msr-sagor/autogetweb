@@ -1,98 +1,82 @@
+import json
 import re
+import requests
 from pathlib import Path
-from playwright.sync_api import sync_playwright
 
 BASE = "https://footsters.livesports18.workers.dev/"
 OUT = "playlist.m3u"
 
-
-def get_page(url):
-
-    mpd_links = []
-    keys = {}
-
-    with sync_playwright() as p:
-
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-
-        def handle_response(response):
-            try:
-                if ".mpd" in response.url:
-                    mpd_links.append(response.url)
-            except:
-                pass
-
-        page.on("response", handle_response)
-
-        page.goto(url, timeout=60000)
-        page.wait_for_timeout(5000)
-
-        html = page.content()
-
-        browser.close()
-
-    return html, mpd_links
+session = requests.Session()
+session.headers.update({"User-Agent": "Mozilla/5.0"})
 
 
-def extract_streams(html):
+def get(url):
+    return session.get(url, timeout=20).text
 
-    return re.findall(
+
+def get_matches(html):
+    return re.findall(r'href="(\?play=\d+)"', html)
+
+
+def parse(html, base_title):
+
+    blocks = re.findall(
         r'<a class="sr" href="(\?play=\d+&stream=\d+)".*?<div class="sr-t[^"]*">\s*(.*?)\s*</div>',
         html,
         re.S
     )
 
+    base = re.search(r'(https?://[^/]+)', BASE).group(1)
 
-def extract_title(html):
+    keys = re.findall(r'"([a-fA-F0-9]{32})":"([a-fA-F0-9]{32})"', html)
+    key_id, key = (keys[0] if keys else (None, None))
 
-    t = re.search(r"<title>(.*?)</title>", html)
-    return t.group(1).split("—")[0].strip() if t else "Live Match"
+    items = []
+
+    for path, name in blocks:
+
+        url = base + "/" + path
+
+        items.append({
+            "title": f"{base_title} | {name}",
+            "url": url,
+            "key_id": key_id,
+            "key": key
+        })
+
+    return items
 
 
 def main():
 
-    html, _ = get_page(BASE)
-
-    matches = re.findall(r'href="(\?play=\d+)"', html)
+    home = get(BASE)
+    matches = get_matches(home)
 
     lines = ["#EXTM3U"]
 
     for m in matches:
 
-        page_url = BASE + m
+        url = BASE + m
+        html = get(url)
 
-        html, mpds = get_page(page_url)
+        title = re.search(r"<title>(.*?)</title>", html).group(1)
 
-        title = extract_title(html)
+        items = parse(html, title)
 
-        streams = extract_streams(html)
+        for i in items:
 
-        # key (optional)
-        key = re.findall(r'"([a-fA-F0-9]{32})":"([a-fA-F0-9]{32})"', html)
-        key_id, key_val = (key[0] if key else (None, None))
+            lines.append(
+                f'#EXTINF:-1 tvg-name="{i["title"]}",{i["title"]}'
+            )
 
-        for i, (path, name) in enumerate(streams):
+            if i["key_id"] and i["key"]:
+                lines.append(
+                    f'#KODIPROP:inputstream.adaptive.license_key={i["key_id"]}:{i["key"]}'
+                )
 
-            if i >= len(mpds):
-                continue
-
-            mpd = mpds[i]
-
-            full_name = f"{title} | {name}"
-
-            lines.append(f'#EXTINF:-1,{full_name}')
-
-            if key_id and key_val:
-                lines.append("#KODIPROP:inputstream.adaptive.stream_type=dash")
-                lines.append("#KODIPROP:inputstream.adaptive.license_type=clearkey")
-                lines.append(f'#KODIPROP:inputstream.adaptive.license_key={key_id}:{key_val}')
-
-            lines.append(mpd)
+            lines.append(i["url"])
 
     Path(OUT).write_text("\n".join(lines), encoding="utf-8")
-
-    print("DONE")
 
 
 if __name__ == "__main__":
