@@ -1,4 +1,3 @@
-import json
 import re
 import requests
 from pathlib import Path
@@ -18,7 +17,15 @@ def get_matches(html):
     return re.findall(r'href="(\?play=\d+)"', html)
 
 
-def parse(html, base_title):
+def extract_title(html):
+
+    t = re.search(r"<title>(.*?)</title>", html)
+    return t.group(1).split("—")[0].strip() if t else "Live Match"
+
+
+def parse_streams(html, match_title):
+
+    results = []
 
     blocks = re.findall(
         r'<a class="sr" href="(\?play=\d+&stream=\d+)".*?<div class="sr-t[^"]*">\s*(.*?)\s*</div>',
@@ -28,23 +35,28 @@ def parse(html, base_title):
 
     base = re.search(r'(https?://[^/]+)', BASE).group(1)
 
+    # 🔑 ClearKey extract
     keys = re.findall(r'"([a-fA-F0-9]{32})":"([a-fA-F0-9]{32})"', html)
     key_id, key = (keys[0] if keys else (None, None))
 
-    items = []
+    # 🎬 MPD extract (important)
+    mpd = re.findall(r'(https?://[^"]+\.mpd[^"]*)', html)
 
-    for path, name in blocks:
+    for i, (path, name) in enumerate(blocks):
 
-        url = base + "/" + path
+        url = mpd[i] if i < len(mpd) else ""
 
-        items.append({
-            "title": f"{base_title} | {name}",
-            "url": url,
+        if not url:
+            continue
+
+        results.append({
+            "title": f"{match_title} | {name}",
+            "mpd": url,
             "key_id": key_id,
             "key": key
         })
 
-    return items
+    return results
 
 
 def main():
@@ -56,12 +68,11 @@ def main():
 
     for m in matches:
 
-        url = BASE + m
-        html = get(url)
+        html = get(BASE + m)
 
-        title = re.search(r"<title>(.*?)</title>", html).group(1)
+        title = extract_title(html)
 
-        items = parse(html, title)
+        items = parse_streams(html, title)
 
         for i in items:
 
@@ -70,13 +81,15 @@ def main():
             )
 
             if i["key_id"] and i["key"]:
-                lines.append(
-                    f'#KODIPROP:inputstream.adaptive.license_key={i["key_id"]}:{i["key"]}'
-                )
+                lines.append("#KODIPROP:inputstream.adaptive.stream_type=dash")
+                lines.append("#KODIPROP:inputstream.adaptive.license_type=clearkey")
+                lines.append(f'#KODIPROP:inputstream.adaptive.license_key={i["key_id"]}:{i["key"]}')
 
-            lines.append(i["url"])
+            lines.append(i["mpd"])
 
     Path(OUT).write_text("\n".join(lines), encoding="utf-8")
+
+    print("DONE")
 
 
 if __name__ == "__main__":
