@@ -123,123 +123,21 @@
   },
   {
     "play_id": 367,
-    "title": "Delhi Capitals vs Rajasthan Royals",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "WILLOW [Ad-Free]",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "SKY SPORTS FHD",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "KAYO HINDI FHD",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   },
   {
     "play_id": 405,
-    "title": "Newcastle United vs West Ham",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "FUBO SPORTS",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "SKY SPORTS FHD",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "TELEMUNDO FHD",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   },
   {
     "play_id": 406,
-    "title": "Sevilla vs Real Madrid",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "beIN ENGLISH FHD",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "PREMIER SPORTS",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "FANCODE FHD",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "TSN SPORTS FHD",
-        "stream": 3,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "Laliga TV FHD",
-        "stream": 4,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   },
   {
     "play_id": 407,
@@ -274,8 +172,17 @@
         }
       },
       {
-        "name": "Laliga TV FHD",
+        "name": "FANCODE FHD",
         "stream": 3,
+        "mpd": "",
+        "clearkey": {
+          "kid": "",
+          "key": ""
+        }
+      },
+      {
+        "name": "Laliga TV FHD",
+        "stream": 4,
         "mpd": "",
         "clearkey": {
           "kid": "",
