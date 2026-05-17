@@ -1,5 +1,5 @@
-import re
 import json
+import re
 import requests
 
 BASE = "https://footsters.livesports18.workers.dev/"
@@ -29,18 +29,24 @@ def build(play_id):
 
     html = get_html(f"{BASE}?play={play_id}")
 
+    streams = extract_streams(html)
+    names = extract_names(html)
+
     return {
         "play_id": play_id,
         "title": extract_title(html),
         "group": "Sports",
         "streams": [
             {
-                "name": extract_names(html)[i] if i < len(extract_names(html)) else f"Source {i+1}",
+                "name": names[i] if i < len(names) else f"Source {i+1}",
                 "stream": int(s),
-                "mpd": "",
-                "clearkey": {"kid": "", "key": ""}
+                "mpd": "",              # will fill later if you have extractor
+                "clearkey": {
+                    "kid": "",
+                    "key": ""
+                }
             }
-            for i, (_, s) in enumerate(extract_streams(html))
+            for i, (_, s) in enumerate(streams)
         ]
     }
 
