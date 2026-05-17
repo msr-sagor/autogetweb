@@ -1,0 +1,21 @@
+{
+  "headers": [
+    {
+      "source": "/playlist.m3u",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "audio/x-mpegurl"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}
