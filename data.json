@@ -75,7 +75,7 @@
     "group": "Sports",
     "streams": [
       {
-        "name": "WILLOW [Ad-Free]",
+        "name": "Willow FHD AQ",
         "stream": 0,
         "mpd": "",
         "clearkey": {
@@ -141,54 +141,8 @@
   },
   {
     "play_id": 407,
-    "title": "Barcelona vs Real Betis",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "beIN ENGLISH FHD",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "PREMIER SPORTS",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "TSN SPORTS FHD",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "FANCODE FHD",
-        "stream": 3,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "Laliga TV FHD",
-        "stream": 4,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   }
 ]
