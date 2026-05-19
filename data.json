@@ -75,7 +75,7 @@
     "group": "Sports",
     "streams": [
       {
-        "name": "Willow FHD AQ",
+        "name": "SKY SPORTS FHD",
         "stream": 0,
         "mpd": "",
         "clearkey": {
@@ -84,7 +84,7 @@
         }
       },
       {
-        "name": "SKY SPORTS FHD",
+        "name": "PREMIER SPORTS",
         "stream": 1,
         "mpd": "",
         "clearkey": {
@@ -93,7 +93,7 @@
         }
       },
       {
-        "name": "PREMIER SPORTS",
+        "name": "FANCODE FHD",
         "stream": 2,
         "mpd": "",
         "clearkey": {
@@ -102,17 +102,8 @@
         }
       },
       {
-        "name": "FANCODE FHD",
-        "stream": 3,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
         "name": "FANCODE - SD",
-        "stream": 4,
+        "stream": 3,
         "mpd": "",
         "clearkey": {
           "kid": "",
