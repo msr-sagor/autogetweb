@@ -13,11 +13,13 @@ https://footsters.livesports18.workers.dev/?play=312&stream=4
 https://footsters.livesports18.workers.dev/?play=312&stream=5
 #EXTINF:-1 tvg-name="Formula 1 - Canada GP | Fox Sports - AQ",Formula 1 - Canada GP | Fox Sports - AQ
 https://footsters.livesports18.workers.dev/?play=312&stream=6
-#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | SKY SPORTS FHD",Bangladesh vs Pakistan | SKY SPORTS FHD
+#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | Willow FHD",Bangladesh vs Pakistan | Willow FHD
 https://footsters.livesports18.workers.dev/?play=355&stream=0
-#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | PREMIER SPORTS",Bangladesh vs Pakistan | PREMIER SPORTS
+#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | SKY SPORTS FHD",Bangladesh vs Pakistan | SKY SPORTS FHD
 https://footsters.livesports18.workers.dev/?play=355&stream=1
-#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | FANCODE FHD",Bangladesh vs Pakistan | FANCODE FHD
+#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | PREMIER SPORTS",Bangladesh vs Pakistan | PREMIER SPORTS
 https://footsters.livesports18.workers.dev/?play=355&stream=2
-#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | FANCODE - SD",Bangladesh vs Pakistan | FANCODE - SD
+#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | FANCODE FHD",Bangladesh vs Pakistan | FANCODE FHD
 https://footsters.livesports18.workers.dev/?play=355&stream=3
+#EXTINF:-1 tvg-name="Bangladesh vs Pakistan | FANCODE - SD",Bangladesh vs Pakistan | FANCODE - SD
+https://footsters.livesports18.workers.dev/?play=355&stream=4
