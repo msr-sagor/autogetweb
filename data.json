@@ -1,125 +1,15 @@
 [
   {
     "play_id": 312,
-    "title": "Formula 1 - Canada GP",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "SKY SPORTS FHD",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "TSN SPORTS FHD",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "FANCODE FHD",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "SKY SPORTS 4k",
-        "stream": 3,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "ELEVEN SPORTS",
-        "stream": 4,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "F1 TV FHD",
-        "stream": 5,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "Fox Sports - AQ",
-        "stream": 6,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   },
   {
     "play_id": 355,
-    "title": "Bangladesh vs Pakistan",
+    "title": "Live Match",
     "group": "Sports",
-    "streams": [
-      {
-        "name": "Willow FHD",
-        "stream": 0,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "SKY SPORTS FHD",
-        "stream": 1,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "PREMIER SPORTS",
-        "stream": 2,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "FANCODE FHD",
-        "stream": 3,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      },
-      {
-        "name": "FANCODE - SD",
-        "stream": 4,
-        "mpd": "",
-        "clearkey": {
-          "kid": "",
-          "key": ""
-        }
-      }
-    ]
+    "streams": []
   },
   {
     "play_id": 367,
@@ -141,7 +31,7 @@
   },
   {
     "play_id": 407,
-    "title": "New York Yankees vs Blue Jays",
+    "title": "Live Match",
     "group": "Sports",
     "streams": []
   }
